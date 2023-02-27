@@ -1,24 +1,23 @@
 import React, { Component } from 'react';
-import { View, Text, Image, StyleSheet} from 'react-native';
+import { View, Text, Image, StyleSheet, SafeAreaView, ScrollView, StatusBar,} from 'react-native';
 
 class App extends Component{
   render(){
     return(
+      <SafeAreaView style={styles.container}>
+      <ScrollView style={styles.scrollView}>
+      <View style={{backgroundColor: 'black', height:950}}>
 
-      <View>
-
-            <View style={{alignItems:'center', justifycontetnt: 'center'}}>
+            <View style={{alignItems:'center', justifycontetnt: 'center', marginTop: 25}}>
               <Image
                 source={{ uri:'https://avatars.githubusercontent.com/u/92961406?v=4'}}
                 style={styles.imagem}
               />
             </View>
 
-
-       
             <Text style={styles.titulos}>
             Dados pessoais:</Text>
-              <View style={{margin: 5}}>
+              <View style={{margin: 5, height:120, backgroundColor: 'black', borderColor:'white', borderWidth:5, borderRadius: 15}}>
                   <Text style={styles.dadosPessoais}>Nome: Gabriel dos Santos Santana 
                   </Text>
                   <Text style={styles.dadosPessoais}>Idade: 19 anos 
@@ -30,12 +29,12 @@ class App extends Component{
 
             <Text style={styles.titulos}>
             Formação:</Text>
-              <View style={{margin: 5}}>
-                  <Text style={styles.titulos}>ETEC Itanháem 
+              <View style={{margin: 5, height:180, backgroundColor: 'black', borderColor:'white', borderWidth:5, borderRadius: 15}}>
+                  <Text style={styles.titulosForm}>ETEC Itanháem 
                   </Text>
                   <Text style={styles.formacao}>ETIM-Informática para Internet 2018-2020 
                   </Text>
-                  <Text style={styles.titulos}>FATEC-PG
+                  <Text style={styles.titulosForm}>FATEC Praia Grande
                   </Text>
                   <Text style={styles.formacao}>Análise e Desenvolvimento de Sistemas 2021-2023
                   </Text>
@@ -43,19 +42,21 @@ class App extends Component{
 
 
             <Text style={styles.titulos}>
-            Projetos</Text>
-              <View style={{margin: 0}}>
-                  <Text style={{color: '#00bfff',fontSize: 20, margin: 5}}>TCC 
+            Projetos:</Text>
+              <View style={{margin: 5, height:180, backgroundColor: 'black', borderColor:'white', borderWidth:5, borderRadius: 15}}>
+                  <Text style={styles.titulosProj}>TCC 
                   </Text>
-                  <Text style={{fontSize: 20, margin: 5, paddindBottom:15}}>https://github.com/Gabriels21/TCC-Trampo-Certo 
+                  <Text style={styles.projetos}>https://github.com/Gabriels21/TCC-Trampo-Certo 
                   </Text>
-                  <Text style={{color: '#00bfff',fontSize: 20, margin: 5}}>GitHub
+                  <Text style={styles.titulosProj}>GitHub
                   </Text>
-                  <Text style={{fontSize: 20, margin: 5}}>https://github.com/Gabriels21
+                  <Text style={styles.projetos}>https://github.com/Gabriels21
                   </Text>
               </View>
 
       </View>
+      </ScrollView>
+    </SafeAreaView>
     )
   }
 }
@@ -66,24 +67,44 @@ export default App;
 const styles = StyleSheet.create({
 
   titulos: {
-    color: '#00bfff',
-    fontSize: 25,
+    color: 'white',
+    fontSize: 19,
     margin: 15
   },
 
+  titulosForm: {
+    color: '#00bfff',
+    fontSize: 18,
+    margin: 5
+  },
+
+  titulosProj: {
+    color: '#00bfff',
+    fontSize: 18,
+    margin: 5
+  },
+
   imagem: {
-    width: 250, 
-    height: 250, 
+    width: 200, 
+    height: 200, 
     borderRadius: 150
   },
 
   dadosPessoais: {
-    fontSize: 20, 
+    color: 'white',
+    fontSize: 18, 
+    margin: 5
+  },
+
+  projetos:{
+    color: 'white',
+    fontSize: 18, 
     margin: 5
   },
 
   formacao: {
-    fontSize: 20, 
+    color: 'white',
+    fontSize: 18, 
     margin: 5
   }
 
